@@ -33,7 +33,7 @@ router.post("/comments/:postId", authMiddleware, async (req, res) => {
 router.get("/comments/:postId", async (req, res) => {
   const { postId } = req.params;
   const comment = await Comment.findAll({ where: { postId } });
-  console.log(comment);
+  
   const sorted_comment = comment
     .sort(function (a, b) {
       return new Date(a.date).getTime() - new Date(b.date).getTime();

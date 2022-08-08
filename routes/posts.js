@@ -1,15 +1,21 @@
 const express = require("express");
-const moment = require("moment");
 const router = express.Router();
-const { Post } = require("../models");
-const { Likey } = require("../models");
-const { User } = require("../models");
 const authMiddleware = require("../middlewares/auth-middleware");
-const jwt = require("jsonwebtoken");
+const PostsController = require("../controllers/posts.controller");
+const postsController = new PostsController();
 
+router.get('/posts',authMiddleware, postsController.getPosts);
+router.get('/posts/like', authMiddleware, postsController.getLikes);
+router.get('/posts/:postId', authMiddleware, postsController.getPostId);
+router.post('/posts', authMiddleware, postsController.createPost);
+router.put('/posts/:postId/like', authMiddleware, postsController.putLike);
+router.put('/posts/:postId', authMiddleware, postsController.updatePost);
+router.delete('/posts/:postId', authMiddleware, postsController.deletePost);
 
+module.exports = router;
+//------------------------------------------------------------------------------------------------//
 //게시글 등록 API
-router.post("/posts", authMiddleware, async (req, res) => {
+/*router.post("/posts", authMiddleware, async (req, res) => {
   const tokenValue = req.cookies.token;
   const { userId, nickname } = jwt.verify(tokenValue, "my-secret-key");
   const { title, content } = req.body;
@@ -20,7 +26,7 @@ router.post("/posts", authMiddleware, async (req, res) => {
   });
 });
 //로그인 한 유저가 좋아요를 누른 게시글 조회
-router.get("/posts/like", authMiddleware, async (req, res) => {
+/*router.get("/posts/like", authMiddleware, async (req, res) => {
   const tokenValue = req.cookies.token;
   const { userId, nickname } = jwt.verify(tokenValue, "my-secret-key");
   const array = [];
@@ -165,6 +171,6 @@ router.put("/posts/:postId/like", authMiddleware, async (req, res) => {
   } else {
     return res.json({ message: "게시글에 좋아요를 취소하였습니다." });
   }
-});
+});*/
 
-module.exports = router;
+
