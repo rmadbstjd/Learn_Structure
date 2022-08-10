@@ -1,5 +1,6 @@
 const PostService = require("../services/posts.service");
 const jwt = require("jsonwebtoken");
+
 class PostsController {
     postService = new PostService();
     //게시글 전체 조회 API
