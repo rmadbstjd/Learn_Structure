@@ -8,6 +8,7 @@ class LoginService {
         return{
             nickname: UserData.nickname,
             password: UserData.password,
+            userId: UserData.userId,
         };
     };
 };

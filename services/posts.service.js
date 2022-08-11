@@ -81,8 +81,6 @@ class PostService {
             createdAt: updatePost.createdAt,
             updatedAt: updatePost.updatedAt,
             like :updatePost.like,
-            
-
         };
 
     };

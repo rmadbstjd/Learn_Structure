@@ -30,7 +30,7 @@ describe("@1 POST /api/posts 게시글 작성 테스트", () => {
         .post("/api/posts")
         .set("Cookie", cookie)
         .send(postData.Createpost1);
-        globalThis.getPostId = response.body.postId
+      globalThis.getPostId = response.body.postId;
       expect(response.statusCode).toBe(201);
       expect(response.request._data.title).toBe(postData.Createpost1.title);
       expect(response.request._data.content).toBe(postData.Createpost1.content);
