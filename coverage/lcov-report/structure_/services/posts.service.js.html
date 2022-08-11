@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.27% </span>
-                <span class="quiet">Statements</span>
-                <span class='fraction'>48/55</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>6/12</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
                 <span class="strong">90.9% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>10/11</span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>50/55</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.79% </span>
+                <span class="strong">66.66% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>8/12</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">81.81% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>9/11</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">90.56% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>46/53</span>
+                <span class='fraction'>48/53</span>
             </div>
         
             
@@ -340,26 +340,20 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -367,7 +361,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -498,10 +498,10 @@ class PostService {
         const pushlike = await this.postRepository.createLike(postId, userId); //Likey Table에 로그인된 userId와 좋아요를 누른 글의 postId 저장
         let like_done = true; //좋아요를 눌렀으니까 like_done은 true
         for (let i = 0; i &lt; test.length; i++) {
-<span class="cstat-no" title="statement not covered" >            if (pushlike.userId == test[i].userId) {</span>
-<span class="cstat-no" title="statement not covered" >                if (pushlike.postId == test[i].postId) {</span>
-<span class="cstat-no" title="statement not covered" >                        like_done = false;</span>
-<span class="cstat-no" title="statement not covered" >                        await this.postRepository.deleteLike(postId, userId);</span>
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (pushlike.userId == test[i].userId) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (pushlike.postId == test[i].postId) {
+                        like_done = false;
+                        await this.postRepository.deleteLike(postId, userId);
                 }
             }
         }
@@ -515,7 +515,7 @@ class PostService {
         const post_list = await this.postRepository.findLikeAllPost("userId",userId);
         
         for (let i = 0; i &lt; post_list.length; i++) {
-            array.push(post_list[i].postId);
+<span class="cstat-no" title="statement not covered" >            array.push(post_list[i].postId);</span>
         }
         
         const sorted_posts = await this.postRepository.findLikePost(array);
@@ -525,7 +525,7 @@ class PostService {
         });
         
         return{
-              data: sorted_post.map((sorted_post) =&gt; ({
+              data: sorted_post.map(<span class="fstat-no" title="function not covered" >(s</span>orted_post) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
               postId: sorted_post.id,
               userId: sorted_post.userId,
               nickname: sorted_post.nickname,
@@ -544,7 +544,7 @@ module.exports = PostService;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-08-11T09:00:07.460Z
+                at 2022-08-11T09:27:14.278Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

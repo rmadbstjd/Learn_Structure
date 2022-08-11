@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660208407607" clover="3.2.0">
-  <project timestamp="1660208407607" name="All files">
-    <metrics statements="338" coveredstatements="256" conditionals="63" coveredconditionals="26" methods="51" coveredmethods="41" elements="452" coveredelements="323" complexity="0" loc="338" ncloc="338" packages="9" files="17" classes="17"/>
+<coverage generated="1660210034324" clover="3.2.0">
+  <project timestamp="1660210034324" name="All files">
+    <metrics statements="337" coveredstatements="260" conditionals="63" coveredconditionals="28" methods="51" coveredmethods="41" elements="451" coveredelements="329" complexity="0" loc="337" ncloc="337" packages="9" files="17" classes="17"/>
     <package name="structure_">
       <metrics statements="19" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <file name="app.js" path="G:\hanghae99\structure_\app.js">
@@ -91,31 +91,30 @@
         <line num="67" count="1" type="stmt"/>
         <line num="68" count="1" type="stmt"/>
         <line num="69" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="70" count="1" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
         <line num="79" count="1" type="stmt"/>
       </file>
     </package>
     <package name="structure_.middlewares">
-      <metrics statements="16" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <metrics statements="15" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <file name="auth-middleware.js" path="G:\hanghae99\structure_\middlewares\auth-middleware.js">
-        <metrics statements="16" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <metrics statements="15" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="11" type="stmt"/>
-        <line num="7" count="11" type="stmt"/>
-        <line num="8" count="11" type="cond" truecount="2" falsecount="0"/>
-        <line num="9" count="4" type="stmt"/>
+        <line num="7" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
         <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
         <line num="16" count="7" type="stmt"/>
-        <line num="17" count="7" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
         <line num="19" count="7" type="stmt"/>
-        <line num="20" count="7" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
       </file>
     </package>
     <package name="structure_.models">
@@ -173,9 +172,9 @@
       </file>
     </package>
     <package name="structure_.repositories">
-      <metrics statements="38" coveredstatements="35" conditionals="4" coveredconditionals="3" methods="10" coveredmethods="9"/>
+      <metrics statements="38" coveredstatements="38" conditionals="4" coveredconditionals="3" methods="10" coveredmethods="10"/>
       <file name="posts.repository.js" path="G:\hanghae99\structure_\repositories\posts.repository.js">
-        <metrics statements="38" coveredstatements="35" conditionals="4" coveredconditionals="3" methods="10" coveredmethods="9"/>
+        <metrics statements="38" coveredstatements="38" conditionals="4" coveredconditionals="3" methods="10" coveredmethods="10"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -207,9 +206,9 @@
         <line num="64" count="1" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
         <line num="67" count="1" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
         <line num="73" count="1" type="stmt"/>
         <line num="75" count="1" type="stmt"/>
         <line num="76" count="1" type="stmt"/>
@@ -340,9 +339,9 @@
       </file>
     </package>
     <package name="structure_.services">
-      <metrics statements="53" coveredstatements="46" conditionals="12" coveredconditionals="6" methods="11" coveredmethods="10"/>
+      <metrics statements="53" coveredstatements="48" conditionals="12" coveredconditionals="8" methods="11" coveredmethods="9"/>
       <file name="posts.service.js" path="G:\hanghae99\structure_\services\posts.service.js">
-        <metrics statements="53" coveredstatements="46" conditionals="12" coveredconditionals="6" methods="11" coveredmethods="10"/>
+        <metrics statements="53" coveredstatements="48" conditionals="12" coveredconditionals="8" methods="11" coveredmethods="9"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
@@ -378,10 +377,10 @@
         <line num="117" count="1" type="stmt"/>
         <line num="118" count="1" type="stmt"/>
         <line num="119" count="1" type="stmt"/>
-        <line num="120" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="121" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="122" count="0" type="stmt"/>
-        <line num="123" count="0" type="stmt"/>
+        <line num="120" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="121" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="123" count="1" type="stmt"/>
         <line num="127" count="1" type="stmt"/>
         <line num="128" count="1" type="stmt"/>
         <line num="129" count="1" type="stmt"/>
@@ -389,12 +388,12 @@
         <line num="133" count="1" type="stmt"/>
         <line num="134" count="1" type="stmt"/>
         <line num="136" count="1" type="stmt"/>
-        <line num="137" count="1" type="stmt"/>
+        <line num="137" count="0" type="stmt"/>
         <line num="140" count="1" type="stmt"/>
         <line num="142" count="1" type="stmt"/>
         <line num="143" count="0" type="stmt"/>
         <line num="146" count="1" type="stmt"/>
-        <line num="147" count="1" type="stmt"/>
+        <line num="147" count="0" type="stmt"/>
         <line num="159" count="1" type="stmt"/>
       </file>
     </package>
