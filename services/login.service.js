@@ -4,7 +4,7 @@ class LoginService {
     loginRepository = new LoginRepository();
 
     Login = async(nickname, password) => {
-        const UserData = await this.LoginRepository.login(nickname, password);
+        const UserData = await this.loginRepository.login(nickname, password);
         return{
             nickname: UserData.nickname,
             password: UserData.password,
