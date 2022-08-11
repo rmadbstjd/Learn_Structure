@@ -16,7 +16,7 @@ class LoginController {
         }
 
         const {nickname, password} = req.body;
-        const user = await this.LoginService.Login(nickname, password);
+        const user = await this.loginService.Login(nickname, password);
 
         if(!user){
             res.status(400).json({
@@ -28,7 +28,7 @@ class LoginController {
 
         let payload = {userId: user.userId, nickname: nickname};
         const token = jwt.sign(payload, process.env.MYSQL_KEY);
-        res.cookies("token", token);
+        res.cookie("token", token);
 
         res.json({
             success: true,
