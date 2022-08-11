@@ -16,7 +16,7 @@ class UsersController {
                 success: false, 
                 errorMassage: "비밀번호와 닉네임이 같은 값이 포함되어 회원가입에 실패하였습니다",
             });
-            return;
+            return false;
         }
 
         if(password.length < 4){
@@ -24,7 +24,7 @@ class UsersController {
                 success:false,
                 errorMassage: "비밀번호는 최소 4자리이어야 합니다",
             });
-            return;
+            return false;
         }
 
         if(!nicknametest.test(nickname)){
@@ -32,7 +32,7 @@ class UsersController {
                 success: false,
                 errorMassage: "아이디 양식이 맞지 않습니다",
             });
-            return;
+            return false;
         }
 
         if(password !== confirm){
@@ -40,7 +40,7 @@ class UsersController {
                 success: false,
                 errorMassage: "비밀번호와 확인 비밀번호가 일치하지 않습니다",
             });
-            return;
+            return false;
         }
 
         if(existUser){
@@ -49,7 +49,7 @@ class UsersController {
                 success: false,
                 errorMassage: "중복된 닉네임입니다",
             });
-            return;
+            return false;
         }
 
         if(tokenValue){
@@ -57,7 +57,7 @@ class UsersController {
                 success: false,
                 errorMassage: "로그인된 상태에서는 회원가입을 할 수 없습니다",
             });
-            return;
+            return false;
         }
 
         const Createduser = await User.create({nickname, password});
@@ -65,6 +65,7 @@ class UsersController {
             success: true,
             message : "회원 가입에 성공하였습니다"
         });
-    }
+        return true;
+    };
 };
 module.exports = UsersController;

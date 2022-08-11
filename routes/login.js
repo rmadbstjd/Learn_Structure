@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const authMiddleware = require("../middlewares/auth-middleware");
 const LoginController = require("../controllers/login.controller");
 const loginController = new LoginController();
 require("dotenv").config();
@@ -9,7 +8,7 @@ require("dotenv").config();
 //POST Methor가 아닌 GET Method로 한다면 body에 데이터를 실을 수 없고 Query String 주소 뒤에 ?해서 email=~~~~, password = ~~~~ 하면
 //주소가 노출이되므로 보안에 취약하다.
 
-router.post("/login", authMiddleware, loginController.login);
+router.post("/login", loginController.login);
 
 module.exports = router;
 // router.post("/login", async (req, res) => {

@@ -1,4 +1,4 @@
-const LoginService = require("../services/require.service");
+const LoginService = require("../services/login.service");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
@@ -35,5 +35,5 @@ class LoginController {
             message: "로그인이 성공되었습니다."
         });
     };
-}
+};
 module.exports = LoginController;

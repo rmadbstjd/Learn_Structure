@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const authMiddleware = require("../middlewares/auth-middleware");
 const UsersController = require("../controllers/users.controller");
 const usersController = new UsersController();
 
-router.post('/users',authMiddleware, usersController.createUser);
+router.post('/users', usersController.createUser);
 
 module.exports = router;
 // router.post("/users", async (req, res) => {
