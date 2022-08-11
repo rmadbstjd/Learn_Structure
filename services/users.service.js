@@ -14,5 +14,13 @@ class UserService {
             updatedAt: createUserData.updatedAt, 
         };
     };
+
+    findOneUser = async(nickname) => {
+        const findUser = await this.userRepository.findOneUser(nickname);
+
+        return{
+            nickname: findUser.nickname
+        };
+    };
 };
 module.exports = UserService;
