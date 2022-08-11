@@ -1,6 +1,11 @@
 const PostService = require("../services/posts.service");
 const jwt = require("jsonwebtoken");
+<<<<<<< HEAD
+
+class PostsController {
+=======
 class PostsController { 
+>>>>>>> origin/main
     postService = new PostService();
     //게시글 전체 조회 API
     getPosts = async(req,res,next) => {
