@@ -16,6 +16,7 @@ class PostRepository {
       const createPostData = await Post.create({
         title, content,userId,nickname
       });
+      
       return createPostData;
     };
 
@@ -45,7 +46,9 @@ class PostRepository {
       }
       
     };
-    /* findLikeAllPost = async(postId) => {
+  
+  
+    /*findLikeAllPost = async(postId) => {
         const likes = await Likey.findAll({where:{postId}});
         return likes; 
       }

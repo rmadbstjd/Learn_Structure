@@ -3,9 +3,10 @@ const postRepository = require("../repositories/posts.repository");
 class PostService {
     postRepository = new postRepository();
     //게시글 전체 조회
+    
     findAllPost = async () => {
         const allPost = await this.postRepository.findAllPost();
-
+        
         allPost.sort((a,b) => {
             return b.createdAt - a.createdAt;
         });
