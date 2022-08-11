@@ -13,6 +13,7 @@ const test = {
   database: env.MYSQL_DATABASE,
   host: env.MYSQL_HOST,
   dialect: "mysql",
+  logging: false,
 };
 const production = {
   username: env.MYSQL_USERNAME,
@@ -21,5 +22,6 @@ const production = {
   host: env.MYSQL_HOST,
   dialect: "mysql",
 };
+
 
 module.exports = { development, production, test };

@@ -1,7 +1,11 @@
 const PostService = require("../services/posts.service");
 const jwt = require("jsonwebtoken");
+<<<<<<< HEAD
 
 class PostsController {
+=======
+class PostsController { 
+>>>>>>> origin/main
     postService = new PostService();
     //게시글 전체 조회 API
     getPosts = async(req,res,next) => {
@@ -29,7 +33,7 @@ class PostsController {
         ;
         const {title, content} =req.body;
         const createPostData = await this.postService.createPost(title, content, userId, nickname);
-        res.status(201).json({success:true, message:"게시글 작성에 성공하였습니다."});
+        res.status(201).json({success:true, message:"게시글 작성에 성공하였습니다.", postId:createPostData.postId});
     };
     // 게시글 수정 API
     updatePost = async(req,res,next) => {
@@ -40,10 +44,10 @@ class PostsController {
         
         const updatePost = await this.postService.updatePost(title, content, postId, userId,nickname);
         if(updatePost === "NotaPost") {
-            return res.status(200).json({success:false, message:"게시글이 존재하지 않습니다."});
+            return res.status(400).json({success:false, message:"게시글이 존재하지 않습니다."});
         }
         if(updatePost ==="NotaAuth") {
-            return res.status(200).json({success:false, message:"게시글을 수정할 권한이 없습니다."});
+            return res.status(400).json({success:false, message:"게시글을 수정할 권한이 없습니다."});
         }
         res.status(200).json({success:true, message:"게시글을 수정하였습니다."});
     };
@@ -54,10 +58,10 @@ class PostsController {
         const {postId} = req.params;
         const deletePost = await this.postService.deletePost(postId,userId,nickname);
         if(deletePost === "NotaPost") {
-            return res.status(200).json({success:false, message:"게시글이 존재하지 않습니다."});
+            return res.status(400).json({success:false, message:"게시글이 존재하지 않습니다."});
         }
         if(deletePost ==="NotaAuth") {
-            return res.status(200).json({success:false, message:"게시글을 수정할 권한이 없습니다."});
+            return res.status(400).json({success:false, message:"게시글을 삭제할 권한이 없습니다."});
         }
         res.status(200).json({success:true, message:"게시글을 삭제하였습니다."});
     }
